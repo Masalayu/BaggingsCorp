@@ -7,7 +7,7 @@ export const catalogData = [
     category: "Produk IT & Elektronik",
     description: "Layar interaktif canggih untuk kebutuhan edukasi dan presentasi korporat. Dilengkapi fitur kolaborasi dan perlindungan mata (Eye-care).",
     price_scheme: { currency: "IDR", min: 45000000, max: 120000000 },
-    image: "assets/img/catalog/ifp-benq.jpg"
+    image: "assets/img/catalog/benq.jpg"
   },
   {
     id: "it-02",
@@ -73,7 +73,7 @@ export const catalogData = [
     price_scheme: { currency: "IDR", min: 3500000, max: 15000000 },
     image: "assets/img/catalog/ac.jpg"
   },
-  
+
   // Peralatan Sekolah/Kantor
   {
     id: "eq-01",
