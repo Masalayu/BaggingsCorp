@@ -1,5 +1,6 @@
 import { catalogData } from '../data/catalog.js';
 import { createProductCard } from '../components/productCard.js';
+import { initScrollReveal } from '../core/animations.js';
 
 let currentCategory = "Semua";
 let searchQuery = "";
@@ -62,6 +63,9 @@ export const renderCatalogPage = (containerId) => {
     } else {
       grid.innerHTML = filtered.map(product => createProductCard(product)).join('');
     }
+    
+    // Inisialisasi animasi scroll
+    setTimeout(() => initScrollReveal(), 50);
   };
 
   // Initial render

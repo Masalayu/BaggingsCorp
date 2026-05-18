@@ -1,4 +1,5 @@
 import { portfolioData } from '../data/portfolio.js';
+import { initScrollReveal } from '../core/animations.js';
 
 let currentView = 'timeline'; // 'timeline' or 'table'
 let filterYear = 'Semua';
@@ -78,7 +79,7 @@ export const renderPortfolioPage = (containerId) => {
               <div class="year-label">${year}</div>
               <div class="timeline-items">
                 ${grouped[year].map(item => `
-                  <div class="timeline-item">
+                  <div class="timeline-item reveal">
                     <div class="timeline-content">
                       <span class="badge" style="background:var(--color-primary); color:white; margin-bottom:0.5rem; display:inline-block;">${item.sumber_dana}</span>
                       <h3 style="color:var(--color-primary); margin:0.5rem 0;">${item.title}</h3>
@@ -100,7 +101,7 @@ export const renderPortfolioPage = (containerId) => {
     } else {
       // Table View
       let html = `
-        <div class="table-responsive">
+        <div class="table-responsive reveal">
           <table class="data-table">
             <thead>
               <tr>
@@ -133,6 +134,8 @@ export const renderPortfolioPage = (containerId) => {
       html += `</tbody></table></div>`;
       contentDiv.innerHTML = html;
     }
+    
+    setTimeout(() => initScrollReveal(), 50);
   };
 
   // Initial Render

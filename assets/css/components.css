@@ -6,15 +6,17 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(13, 43, 85, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: 1px solid transparent;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(13, 43, 85, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(201, 168, 76, 0.25);
+  border-color: var(--color-accent);
 }
 
 .card-image {
@@ -170,10 +172,24 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* -------------------
+   ANIMATIONS
+-------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* -------------------

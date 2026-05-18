@@ -1,7 +1,7 @@
 // productCard.js
 export const createProductCard = (product) => {
   return `
-    <div class="product-card" data-category="${product.category}">
+    <div class="product-card reveal" data-category="${product.category}">
       <div class="card-image">
         <img src="${product.image}" alt="${product.name}" onerror="this.src='assets/img/logo.png'" />
         <span class="badge category-badge">${product.category}</span>

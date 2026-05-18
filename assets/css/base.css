@@ -12,6 +12,15 @@
   --font-body: 'Source Sans 3', sans-serif;
 }
 
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 /* Basic Reset & Typography Setup */
 * {
   margin: 0;
