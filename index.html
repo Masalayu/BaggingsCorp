@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baggins Corp - Catalog Demo</title>
+  <title>Baggins Corp</title>
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <!-- Layout minimalis sementara -->
-  <style>
-    body { padding: 2rem; }
-    .catalog-section { max-width: 1200px; margin: 0 auto; }
-  </style>
 </head>
 <body>
+  
+  <!-- Tempat Navbar Dirender -->
+  <div id="navbar-root"></div>
+  
+  <!-- Tempat Halaman (Router) Dirender -->
+  <main id="app">
+    <!-- Konten otomatis dimuat via JS -->
+  </main>
 
-  <div id="app">
-    <!-- Konten akan dimuat di sini -->
-  </div>
-
+  <!-- Script Utama -->
   <script type="module">
-    import { renderCatalogPage } from './assets/js/pages/catalogPage.js';
+    import { createNavbar } from './assets/js/components/navbar.js';
+    import { initRouter } from './assets/js/core/router.js';
     
-    // Inisialisasi Halaman Katalog
-    renderCatalogPage('app');
+    // Pasang komponen Navbar ke DOM
+    const navbarRoot = document.getElementById('navbar-root');
+    navbarRoot.appendChild(createNavbar());
+    
+    // Inisialisasi router SPA
+    initRouter();
   </script>
 </body>
 </html>
