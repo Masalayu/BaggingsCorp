@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baggins Corp - Catalog Demo</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Layout minimalis sementara -->
+  <style>
+    body { padding: 2rem; }
+    .catalog-section { max-width: 1200px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <!-- Konten akan dimuat di sini -->
+  </div>
+
+  <script type="module">
+    import { renderCatalogPage } from './assets/js/pages/catalogPage.js';
+    
+    // Inisialisasi Halaman Katalog
+    renderCatalogPage('app');
+  </script>
+</body>
+</html>

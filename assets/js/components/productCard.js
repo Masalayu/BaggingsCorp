@@ -10,7 +10,7 @@ export const createProductCard = (product) => {
         <h3 class="product-title">${product.name}</h3>
         <p class="product-desc">${product.description}</p>
         <div class="card-footer">
-          <button class="btn btn-outline-gold" onclick="console.log('Detail ${product.id}')">Lihat Detail</button>
+          <button class="btn btn-outline-gold" onclick="window.openProductModal('${product.id}')">Lihat Detail</button>
         </div>
       </div>
     </div>
