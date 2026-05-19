@@ -6,11 +6,18 @@ const routes = {
     document.getElementById('app').innerHTML = `
       <div class="home-hero">
         <div class="home-bg-layer" id="homeBackgrounds">
-          <!-- Tempat background slider / grid foto. Anda bisa tambahkan <img> atau CSS background disini -->
+          <div class="hero-photo-grid">
+            <div class="hero-frame"><img src="assets/img/hero1.png" onerror="this.style.display='none'"></div>
+            <div class="hero-frame"><img src="assets/img/hero2.png" onerror="this.style.display='none'"></div>
+            <div class="hero-frame"><img src="assets/img/hero3.png" onerror="this.style.display='none'"></div>
+            <div class="hero-frame"><img src="assets/img/hero4.png" onerror="this.style.display='none'"></div>
+            <div class="hero-frame"><img src="assets/img/hero5.png" onerror="this.style.display='none'"></div>
+            <div class="hero-frame"><img src="assets/img/hero6.png" onerror="this.style.display='none'"></div>
+          </div>
         </div>
         <div class="home-hero-content">
           <h1 style="color:var(--color-primary); font-size:3rem; margin-bottom:1rem; font-family:var(--font-heading);">Baggins Corp</h1>
-          <p style="font-size:1.2rem; color:var(--color-text); margin-bottom: 2rem;">Solusi Terpercaya untuk Kebutuhan IT & Peralatan Instansi Anda.</p>
+          <p style="font-size:1.2rem; color:var(--color-text); margin-bottom: 2rem;">Kami Hadir dengan Membawa Solusi untuk Pembelajaran Digital melalui IFP (Interactive Flat Panel) yang didukung oleh E-book dan Koding Next.</p>
           <a href="#catalog" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Jelajahi Katalog</a>
         </div>
       </div>
