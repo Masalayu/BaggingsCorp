@@ -37,7 +37,7 @@ export const renderPortfolioPage = (containerId) => {
 
   container.innerHTML = `
     <div class="portfolio-section">
-      <h2 class="section-title">Portofolio Proyek (2019 - 2024)</h2>
+      <h2 class="section-title">Portofolio Proyek (2024 - 2025)</h2>
       ${filterHTML}
       <div id="portfolioContent" class="portfolio-content"></div>
     </div>
@@ -79,6 +79,7 @@ export const renderPortfolioPage = (containerId) => {
                 ${grouped[year].map(item => `
                   <div class="timeline-item reveal">
                     <div class="timeline-content">
+                      ${item.image ? `<img src="${item.image}" alt="${item.title}" style="display:block; max-width:100%; max-height:250px; border-radius:8px; margin-bottom:1rem;" onerror="this.style.display='none'">` : ''}
                       <span class="badge" style="background:var(--color-primary); color:white; margin-bottom:0.5rem; display:inline-block;">${item.sumber_dana}</span>
                       <h3 style="color:var(--color-primary); margin:0.5rem 0;">${item.title}</h3>
                       <p><strong>Instansi:</strong> ${item.client_instansi}</p>
