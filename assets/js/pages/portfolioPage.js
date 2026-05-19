@@ -14,7 +14,7 @@ export const renderPortfolioPage = (containerId) => {
 
   const filterHTML = `
     <div class="portfolio-controls">
-      <div style="display:flex; gap:1.5rem;">
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
         <div class="filter-group">
           <label>Filter Tahun:</label>
           <select id="yearFilter" class="select-filter">
@@ -49,8 +49,6 @@ export const renderPortfolioPage = (containerId) => {
   const btnTimeline = document.getElementById('btnTimeline');
   const btnTable = document.getElementById('btnTable');
 
-  const formatCurrency = (val) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(val);
-
   const renderContent = () => {
     // Apply filters
     const filtered = portfolioData.filter(item => {
@@ -84,7 +82,6 @@ export const renderPortfolioPage = (containerId) => {
                       <span class="badge" style="background:var(--color-primary); color:white; margin-bottom:0.5rem; display:inline-block;">${item.sumber_dana}</span>
                       <h3 style="color:var(--color-primary); margin:0.5rem 0;">${item.title}</h3>
                       <p><strong>Instansi:</strong> ${item.client_instansi}</p>
-                      <p><strong>Nominal:</strong> ${formatCurrency(item.nominal_value)}</p>
                       <p><strong>Metode:</strong> ${item.procurement_method}</p>
                       <p style="font-size:0.9rem; margin-top:1rem; color:#555; line-height:1.5;">${item.description}</p>
                     </div>
@@ -109,14 +106,13 @@ export const renderPortfolioPage = (containerId) => {
                 <th>Sumber</th>
                 <th>Instansi</th>
                 <th>Judul Paket</th>
-                <th>Nominal</th>
                 <th>Metode Pengadaan</th>
               </tr>
             </thead>
             <tbody>
       `;
       if (filtered.length === 0) {
-        html += `<tr><td colspan="6" style="text-align:center;">Data proyek tidak ditemukan.</td></tr>`;
+        html += `<tr><td colspan="5" style="text-align:center;">Data proyek tidak ditemukan.</td></tr>`;
       } else {
         filtered.forEach(item => {
           html += `
@@ -125,7 +121,6 @@ export const renderPortfolioPage = (containerId) => {
               <td><span class="badge" style="background:#e2e8f0; color:#333; padding:0.2rem 0.5rem; border-radius:4px; font-weight:bold;">${item.sumber_dana}</span></td>
               <td>${item.client_instansi}</td>
               <td>${item.title}</td>
-              <td>${formatCurrency(item.nominal_value)}</td>
               <td>${item.procurement_method}</td>
             </tr>
           `;

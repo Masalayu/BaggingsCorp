@@ -5,7 +5,10 @@ export const createNavbar = () => {
   header.innerHTML = `
     <div class="navbar-container">
       <a href="#home" class="navbar-logo">
-        <img src="assets/img/logo.png" alt="Baggins Corp" onerror="this.outerHTML='<span class=\\'logo-text\\'>Baggins Corp</span>'" />
+        <!-- Tempat untuk menaruh Logo PT Anda (ganti src dengan path logo) -->
+        <img src="assets/img/logo.jpg" alt="Logo PT" class="pt-logo" style="height: 40px; margin-right: 12px;" onerror="this.style.display='none'" />
+        <!-- Teks Nama Perusahaan -->
+        <span class="logo-text">Baggins Corp</span>
       </a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span class="hamburger-line"></span>
@@ -21,7 +24,6 @@ export const createNavbar = () => {
     </div>
   `;
 
-  // Attach event listener for hamburger menu after element is in DOM
   setTimeout(() => {
     const btn = header.querySelector('#hamburgerBtn');
     const menu = header.querySelector('#navbarMenu');
@@ -30,7 +32,6 @@ export const createNavbar = () => {
         btn.classList.toggle('active');
         menu.classList.toggle('active');
       });
-      // Close menu when a link is clicked
       menu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
           btn.classList.remove('active');

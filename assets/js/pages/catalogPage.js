@@ -97,46 +97,6 @@ export const renderCatalogPage = (containerId) => {
   window.openProductModal = (id) => {
     const product = catalogData.find(p => p.id === id);
     if (!product) return;
-    
-    // Calculate Lease to Own Pricing
-    // Extract base price (using min for price_scheme, or fallback)
-    const basePrice = product.price_scheme.min || product.price_scheme.price_per_year || product.price_scheme.start_from || 0;
-    
-    let tableHTML = "";
-    if (basePrice > 0) {
-      // 6 months: base * 1.1 / 6
-      // 12 months: base * 1.15 / 12
-      const price6 = Math.round(basePrice * 1.1 / 6);
-      const price12 = Math.round(basePrice * 1.15 / 12);
-      
-      const formatCurrency = (val) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(val);
-
-      tableHTML = `
-        <h4 class="modal-subtitle">Skema Sewa Milik (Lease to Own)</h4>
-        <table class="pricing-table">
-          <thead>
-            <tr>
-              <th>Tenor</th>
-              <th>Cicilan per Bulan</th>
-              <th>Total Harga</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>6 Bulan</td>
-              <td>${formatCurrency(price6)}</td>
-              <td>${formatCurrency(price6 * 6)}</td>
-            </tr>
-            <tr>
-              <td>12 Bulan</td>
-              <td>${formatCurrency(price12)}</td>
-              <td>${formatCurrency(price12 * 12)}</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">*Harga simulasi (asumsi bunga +10% untuk 6 bulan & +15% untuk 12 bulan). Syarat dan ketentuan berlaku.</p>
-      `;
-    }
 
     const modalBody = document.getElementById('modalBody');
     modalBody.innerHTML = `
@@ -148,7 +108,6 @@ export const renderCatalogPage = (containerId) => {
           <span class="badge category-badge" style="position: static; display: inline-block; margin-bottom: 1rem;">${product.category}</span>
           <h2 class="modal-title">${product.name}</h2>
           <p class="modal-desc">${product.description}</p>
-          ${tableHTML}
           <button class="btn btn-primary" style="margin-top: 1.5rem; width: 100%;" onclick="alert('Membuka WhatsApp Sales...')">Hubungi Sales</button>
         </div>
       </div>
