@@ -31,7 +31,6 @@ const routes = {
         <h2 style="color:var(--color-primary); margin-bottom:1rem; font-size:2.5rem;">Hubungi Kami</h2>
         <p style="color:var(--color-text); margin-bottom:2rem;">Tim sales kami siap membantu Anda dengan penawaran terbaik dan simulasi skema pengadaan yang paling sesuai.</p>
         <div style="background:#fff; padding:2rem; border-radius:8px; box-shadow:0 4px 10px rgba(13,43,85,0.1); text-align:left;">
-          <p><strong>Email:</strong> sales@bagginscorp.co.id</p>
           <p style="margin-top:1rem;"><strong>Telepon:</strong> 082135444400 </p>
           <p style="margin-top:1rem;"><strong>Alamat:</strong> Jl. Puncak Gadog-Seusasupan No.358 / GD BSI, Bedungan, Bogor</p>
         </div>
