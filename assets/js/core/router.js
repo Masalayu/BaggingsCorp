@@ -43,7 +43,7 @@ export const initRouter = () => {
   const router = () => {
     const hash = window.location.hash || '#home';
     const renderPage = routes[hash];
-    
+
     if (renderPage) {
       document.getElementById('app').innerHTML = ''; // Clear current content
       renderPage();
@@ -67,6 +67,6 @@ export const initRouter = () => {
 
   window.addEventListener('hashchange', router);
   window.addEventListener('load', router);
-  
+
   router();
 };
